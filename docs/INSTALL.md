@@ -44,6 +44,28 @@ irm https://raw.githubusercontent.com/octokraft/preflight-releases/main/scripts/
 
 The installer places `preflight.exe` into `%LOCALAPPDATA%\Preflight` and adds that directory to the user `PATH`.
 
+## npm / Node.js (all platforms)
+
+Works on macOS, Linux, and Windows:
+
+```bash
+npm install -g @octokraft/preflight
+```
+
+Or one-shot via npx:
+
+```bash
+npx @octokraft/preflight analyze
+```
+
+The package uses npm `optionalDependencies` to install only the binary for the current platform. No network access at install time beyond the standard npm registry fetch. No `postinstall` script.
+
+To install a specific version:
+
+```bash
+npm install -g @octokraft/preflight@0.2.0
+```
+
 ## Verify
 
 ```bash
